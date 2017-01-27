@@ -1,13 +1,8 @@
-language: ruby
+language: node_js
+node_js:
+  - "6"
 
-deploy:
-    provider: s3
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
-    bucket: my-aws-test-site
-    endpoint: http://my-aws-test-site.s3-website-us-west-1.amazonaws.com/
-    region: us-west-1
-    skip_cleanup: true
-    acl: public_read
-    on:
-        all_branches: true
+before_script:
+  - npm install -g gulp
+script: gulp
+
