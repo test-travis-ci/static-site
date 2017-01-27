@@ -1,0 +1,97 @@
+.form-control {
+  // Since <textarea> elements don't respect padding, consistency can be
+  // achieved by forcing all inputs to conform to the same height
+  height: 50px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.form-custom-checkbox {
+  text-align: left;
+
+  label {
+    font-size: 12px;
+    color: $dark-gray;
+    padding-left: 0;
+  }
+
+  input[type="checkbox"] {
+    // Hide the default checkbox using opacity so the form validation messages
+    // can still be shown
+    opacity: 0;
+
+    & ~ span {
+      position: relative;
+      top: -2px;
+      display: inline-block;
+      border: 2px solid $blue;
+      border-radius: $input-border-radius;
+      margin-right: 7px;
+      width: 34px;
+      height: 34px;
+      vertical-align: middle;
+    }
+
+    &:checked ~ span:after {
+      position: relative;
+      top: -2px;
+      left: 3px;
+      display: inline-block;
+      font-family: FontAwesome;
+      font-size: 24px;
+      content: $fa-var-check;
+    }
+  }
+}
+
+.form-link:hover {
+  color: $blue;
+}
+
+.form-submit-button {
+  width: 100%;
+
+  @media #{$md} {
+    width: auto;
+  }
+}
+
+.form-forgot-password-link {
+  color: $white;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+// Create .form-group-inline-sm and .form-group-inline-lg classes to allow
+// inline form elements to collapse at different breakpoints
+$breakpoints-map: (
+  sm: $sm,
+  lg: $lg
+);
+
+@each $breakpoint, $media-query in $breakpoints-map {
+  .form-group-inline-#{$breakpoint} {
+    text-align: center;
+
+    .checkbox,
+    .btn,
+    input {
+      margin-bottom: $form-group-margin-bottom;
+
+      @media #{$media-query} {
+        display: inline-block;
+        width: calc(50% - (#{$form-group-margin-bottom} / 2));
+        margin-right: $form-group-margin-bottom;
+        margin-bottom: 0;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+// The following animations are borrowed from @IanLunn's Hover.css library
+// https://github.com/IanLunn/Hover/blob/master/css/hover.css
+
+.hvr-sink {
+  display: inline-block;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  transition-duration: 0.3s;
+  transition-property: transform;
+  transition-timing-function: ease-out;
+
+  &:hover,
+  &:focus,
+  &:active {
+    transform: translateY(8px);
+  }
+}
+
+.hvr-forward {
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  transition-duration: 0.3s;
+  transition-property: transform;
+
+  &:hover,
+  &:focus,
+  &:active {
+    transform: translateX(8px);
+  }
+}
+
+.hvr-backward {
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  transition-duration: 0.3s;
+  transition-property: transform;
+
+  &:hover,
+  &:focus,
+  &:active {
+    transform: translateX(-8px);
+  }
+}
