@@ -1,0 +1,38 @@
+.customers {
+  text-align: center;
+  padding-top: $section-padding;
+
+  // Subtract the ".customers__list-item" bottom margin so the items are
+  // vertically centered on mobile
+  padding-bottom: $section-padding - 20px;
+
+  @media #{$sm} {
+    padding-bottom: $section-padding;
+  }
+}
+
+.customers__list {
+  margin-bottom: 0;
+}
+
+.customers__list-item {
+  width: percentage(1/3);
+  margin-bottom: 20px;
+
+  img {
+    width: 100%;
+  }
+
+  @media #{$sm} {
+    width: 20%;
+    margin-bottom: 0;
+  }
+}
+
+.customers__button {
+  margin-top: $section-padding / 2;
+
+  @media #{$md} {
+    margin-top: $section-padding;
+  }
+}

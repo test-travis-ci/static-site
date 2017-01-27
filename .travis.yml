@@ -1,5 +1,11 @@
+sudo: required
+language: node_js
+node_js:
+  - "6"
 
-language: c
+before_script:
+  - npm install -g gulp
+script: gulp
 
 deploy:
     provider: s3

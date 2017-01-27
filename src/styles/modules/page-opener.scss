@@ -1,0 +1,46 @@
+.page-opener {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding-top: $section-padding;
+  padding-bottom: 40px;
+
+  @media #{$sm} {
+    padding-top: $section-padding * 2;
+  }
+}
+
+.page-opener__image {
+  width: 100%;
+}
+
+.page-opener__heading {
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: $white;
+  margin-bottom: 25px;
+
+  @media #{$sm} {
+    font-size: 32px;
+  }
+}
+
+.page-opener__button {
+  margin-bottom: 120px;
+}
+
+.page-opener__scroll-button {
+  font-size: 36px;
+
+  &:before {
+    content: "\FE40";
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $blue;
+  }
+}

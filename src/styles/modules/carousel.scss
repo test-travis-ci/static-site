@@ -1,0 +1,150 @@
+.slide__container {
+  background-position: 80%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+
+  @media #{$sm} {
+    background-position: 86%;
+  }
+
+  @media #{$md} {
+    background-position: center;
+    text-align: left;
+  }
+}
+
+.slide--dark-text {
+  @media #{$md} {
+    .slide__heading,
+    .slide__subheading {
+      color: $dark-gray;
+    }
+  }
+}
+
+.slide__overlay {
+  background-color: rgba($dark-gray, .4);
+  padding-top: $section-padding / 1.5;
+  padding-bottom: $section-padding * 1.5;
+
+  @media #{$sm} {
+    padding-top: 125px;
+    padding-bottom: $section-padding * 3.5;
+  }
+
+  @media #{$md} {
+    background: none;
+  }
+}
+
+.slide__heading,
+.slide__subheading {
+  text-shadow: 1px 1px rgba($black, .7);
+
+  @media #{$md} {
+    text-shadow: none;
+  }
+}
+
+.slide__heading {
+  font-size: 36px;
+  font-weight: bold;
+  color: $white;
+  margin-bottom: 20px;
+  width: auto;
+
+  @media #{$sm} {
+    font-size: $font-size-h1;
+    margin-bottom: 30px;
+  }
+
+  @media #{$md} {
+    font-weight: normal;
+    width: 460px;
+  }
+}
+
+.slide__subheading {
+  font-size: 22px;
+  color: $white;
+  margin-bottom: 30px;
+
+  @media #{$sm} {
+    font-size: 28px;
+  }
+}
+
+.slide__button {
+  font-size: 24px;
+  font-weight: bold;
+
+  @media #{$sm} {
+    font-size: 22px;
+  }
+
+  @media #{$md} {
+    font-size: 18px;
+    font-weight: normal;
+  }
+}
+
+// Override Bootstrap's ".carousel-indicators" styles
+.carousel-indicators li {
+  border-width: 2px;
+  border-color: $white;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+
+  &.active {
+    background-color: $white;
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+
+  @media #{$md} {
+    border-color: $carousel-indicator-border-color;
+
+    &.active {
+      background-color: $carousel-indicator-border-color;
+    }
+  }
+}
+
+// Override Bootstrap's ".carousel-control" styles
+.carousel-control {
+  display: none;
+  color: $white;
+
+  &:hover,
+  &:focus {
+    color: $white;
+  }
+
+  @media #{$sm} {
+    display: inherit;
+  }
+
+  @media #{$md} {
+    color: $carousel-control-color;
+
+    &:hover,
+    &:focus {
+      color: $carousel-control-color;
+    }
+  }
+
+  &.left,
+  &.right {
+    background-image: none;
+  }
+
+  .icon-prev:before {
+    content: "\27E8";
+  }
+
+  .icon-next:before {
+    content: "\27E9";
+  }
+}
