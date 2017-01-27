@@ -1,8 +1,0 @@
-// Utility class for collapsing column gutters, eg. <div class="row no-gutter">
-.no-gutter {
-  [class*='col-']:not(:first-child),
-  [class*='col-']:not(:last-child) {
-    padding-right: 0;
-    padding-left: 0;
-  }
-}
